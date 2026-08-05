@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papi Parrilla | Restaurante e Pizzaria</title>
+    
+    <!-- Tailwind CSS (Para o visual) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Ícones Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="min-h-screen bg-stone-50 font-sans text-stone-800 selection:bg-orange-500 selection:text-white">
+
+    <!-- HEADER / NAVBAR -->
+    <header class="fixed w-full z-50 bg-stone-900/95 backdrop-blur-sm border-b border-stone-800 text-stone-100 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <i data-lucide="chef-hat" class="h-8 w-8 text-orange-500"></i>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-xl leading-tight uppercase tracking-wider">Papi Parrilla</span>
+                        <span class="text-xs text-orange-400 uppercase tracking-widest text-center">Restaurante e Pizzaria</span>
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="#sobre" class="text-stone-300 hover:text-orange-500 transition-colors text-sm font-medium">O Espaço</a>
+                    <a href="#destaques" class="text-stone-300 hover:text-orange-500 transition-colors text-sm font-medium">Cardápio</a>
+                    <a href="#localizacao" class="text-stone-300 hover:text-orange-500 transition-colors text-sm font-medium">Localização</a>
+                    
+                    <div class="w-px h-6 bg-stone-700 mx-2"></div>
+                    
+                    <a href="https://instagram.com/papi.parrilla" target="_blank" class="text-stone-300 hover:text-orange-500 transition-colors">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                </nav>
+
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="https://pedido.anota.ai/loja/papi-parrilla" target="_blank" class="text-stone-300 hover:text-white flex items-center gap-2 font-medium text-sm transition-colors">
+                        <i data-lucide="shopping-bag" class="w-4 h-4"></i> Delivery
+                    </a>
+                    <a href="https://wa.me/55999273278?text=Olá! Gostaria de fazer uma reserva." target="_blank" class="bg-orange-600 hover:bg-orange-700 text-white px-5 py-2.5 rounded-full font-medium transition-all transform hover:scale-105 flex items-center gap-2 shadow-lg shadow-orange-900/20 text-sm">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i> Reservar Mesa
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-stone-300 hover:text-white focus:outline-none">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Escondido por padrão) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-stone-900 border-t border-stone-800 p-4 space-y-4 shadow-xl">
+            <div class="flex flex-col space-y-2">
+                <a href="#sobre" class="mobile-link px-3 py-2 text-base font-medium text-stone-300 hover:text-orange-500 hover:bg-stone-800 rounded-md">O Espaço</a>
+                <a href="#destaques" class="mobile-link px-3 py-2 text-base font-medium text-stone-300 hover:text-orange-500 hover:bg-stone-800 rounded-md">Destaques do Cardápio</a>
+                <a href="#localizacao" class="mobile-link px-3 py-2 text-base font-medium text-stone-300 hover:text-orange-500 hover:bg-stone-800 rounded-md">Localização</a>
+            </div>
+            <div class="grid grid-cols-1 gap-3 pt-4 border-t border-stone-800">
+                <a href="https://pedido.anota.ai/loja/papi-parrilla" target="_blank" class="w-full flex items-center justify-center gap-2 bg-stone-800 hover:bg-stone-700 text-white px-4 py-3 rounded-lg font-medium">
+                    <i data-lucide="shopping-bag" class="w-5 h-5"></i> Pedir Delivery
+                </a>
+                <a href="https://wa.me/55999273278" target="_blank" class="w-full flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-4 py-3 rounded-lg font-medium">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i> Reservar Mesa
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-20 pb-32 flex items-center min-h-screen">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80" alt="Carnes grelhadas na parrilla" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-r from-stone-950 via-stone-900/90 to-stone-900/40"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-16">
+            <div class="max-w-2xl">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-stone-800/80 border border-stone-700 backdrop-blur-sm mb-6">
+                    <div class="flex gap-1 text-orange-500">
+                        <i data-lucide="star" class="w-4 h-4 fill-orange-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-orange-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-orange-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-orange-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-orange-500 opacity-50"></i>
+                    </div>
+                    <span class="text-stone-300 text-sm font-medium">Referência Gastronômica em Uruguaiana</span>
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6 tracking-tight">
+                    O autêntico sabor da <br />
+                    <span class="text-orange-500">Fronteira Oeste.</span>
+                </h1>
+                
+                <p class="text-lg md:text-xl text-stone-300 mb-10 max-w-xl leading-relaxed">
+                    Cortes nobres na parrilla, filés incríveis e pizzas muito bem recheadas. Uma experiência gastronômica completa no coração da cidade com a hospitalidade que você merece.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://share.google/cyXHZnaipNjoONyRt" target="_blank" class="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-[0_0_20px_rgba(234,88,12,0.3)] hover:shadow-[0_0_30px_rgba(234,88,12,0.5)] flex items-center justify-center gap-2 group">
+                        <i data-lucide="map-pin" class="w-5 h-5 group-hover:animate-bounce"></i> Como Chegar
+                    </a>
+                    <a href="https://pedido.anota.ai/loja/papi-parrilla" target="_blank" class="bg-stone-800/80 hover:bg-stone-700 backdrop-blur-sm text-white border border-stone-600 px-8 py-4 rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                        <i data-lucide="shopping-bag" class="w-5 h-5"></i> Pedir Delivery
+                    </a>
+                </div>
+                <p class="mt-4 text-sm text-stone-400 flex items-center gap-2">
+                    <i data-lucide="clock" class="w-4 h-4"></i> Aberto hoje até meia-noite
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AVALIAÇÕES / SOCIAL PROOF -->
+    <section class="py-16 bg-orange-600 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-black to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
+                <!-- Avaliação 1 -->
+                <div class="bg-orange-700/50 rounded-2xl p-8 backdrop-blur-sm border border-orange-500/30">
+                    <i data-lucide="quote" class="w-10 h-10 text-orange-300 mb-4 opacity-50"></i>
+                    <p class="text-white text-lg md:text-xl font-medium leading-relaxed mb-6">"Uma das referências gastronômicas da cidade. Serve a mais tradicional parrilla da fronteira em um ambiente extremamente agradável."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+                            <i data-lucide="star" class="w-5 h-5 text-orange-600 fill-orange-600"></i>
+                        </div>
+                        <span class="text-orange-100 font-bold tracking-wide uppercase text-sm">Destemperados (GZH)</span>
+                    </div>
+                </div>
+                <!-- Avaliação 2 -->
+                <div class="bg-orange-700/50 rounded-2xl p-8 backdrop-blur-sm border border-orange-500/30">
+                    <i data-lucide="quote" class="w-10 h-10 text-orange-300 mb-4 opacity-50"></i>
+                    <p class="text-white text-lg md:text-xl font-medium leading-relaxed mb-6">"Servem pizzas bem recheadas, filés incríveis, e carregam um toque de hospitalidade que só a Fronteira Oeste tem. O ambiente é ideal para partilhar momentos."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+                            <i data-lucide="star" class="w-5 h-5 text-orange-600 fill-orange-600"></i>
+                        </div>
+                        <span class="text-orange-100 font-bold tracking-wide uppercase text-sm">Guia Gastronômico Local</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE O ESPAÇO -->
+    <section id="sobre" class="py-24 bg-stone-900 text-stone-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-sm font-bold text-orange-500 uppercase tracking-widest mb-2">Muito mais que churrasco</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-white">Um ambiente perfeito para todos os momentos</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="flex flex-col items-center text-center p-6 rounded-2xl bg-stone-800/40 border border-stone-800 hover:border-orange-500/50 transition-colors group">
+                    <div class="w-16 h-16 bg-stone-800 group-hover:bg-orange-500/20 rounded-full flex items-center justify-center mb-6 transition-colors">
+                        <i data-lucide="utensils" class="w-8 h-8 text-orange-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Buffet & A La Carte</h3>
+                    <p class="text-stone-400 text-sm">Da parrilla livre com buffet aos pratos montados como nossos famosos filés.</p>
+                </div>
+                
+                <div class="flex flex-col items-center text-center p-6 rounded-2xl bg-stone-800/40 border border-stone-800 hover:border-orange-500/50 transition-colors group">
+                    <div class="w-16 h-16 bg-stone-800 group-hover:bg-orange-500/20 rounded-full flex items-center justify-center mb-6 transition-colors">
+                        <i data-lucide="chef-hat" class="w-8 h-8 text-orange-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Pizzaria</h3>
+                    <p class="text-stone-400 text-sm">Além das carnes, oferecemos pizzas salgadas e doces fartamente recheadas no jantar.</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center p-6 rounded-2xl bg-stone-800/40 border border-stone-800 hover:border-orange-500/50 transition-colors group">
+                    <div class="w-16 h-16 bg-stone-800 group-hover:bg-orange-500/20 rounded-full flex items-center justify-center mb-6 transition-colors">
+                        <i data-lucide="users" class="w-8 h-8 text-orange-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Espaço Eventos</h3>
+                    <p class="text-stone-400 text-sm">Ambiente privativo e aconchegante disponível para suas confraternizações.</p>
+                </div>
+                
+                <div class="flex flex-col items-center text-center p-6 rounded-2xl bg-stone-800/40 border border-stone-800 hover:border-orange-500/50 transition-colors group">
+                    <div class="w-16 h-16 bg-stone-800 group-hover:bg-orange-500/20 rounded-full flex items-center justify-center mb-6 transition-colors">
+                        <i data-lucide="wine" class="w-8 h-8 text-orange-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Drinks & Vinhos</h3>
+                    <p class="text-stone-400 text-sm">Carta variada de vinhos e ótimos coquetéis para harmonizar perfeitamente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENU HIGHLIGHTS -->
+    <section id="destaques" class="py-24 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div class="max-w-2xl">
+                    <h2 class="text-sm font-bold text-orange-600 uppercase tracking-widest mb-2">Descubra Nossos Sabores</h2>
+                    <h3 class="text-4xl font-extrabold text-stone-900">Destaques do Cardápio</h3>
+                </div>
+                <a href="https://pedido.anota.ai/loja/papi-parrilla" target="_blank" class="inline-flex items-center gap-2 bg-stone-900 text-white px-6 py-3 rounded-xl font-medium hover:bg-stone-800 transition-colors whitespace-nowrap">
+                    Ver Menu Completo Online
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Item 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-stone-100 group hover:shadow-xl transition-all duration-300 flex flex-col">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-stone-900/80 to-transparent opacity-80"></div>
+                        <h4 class="absolute bottom-4 left-4 text-xl font-bold text-white">Entrecot de Angus</h4>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <p class="text-stone-600 text-sm mb-6">Corte nobre e suculento, assado na tradicional parrilla da fronteira com acompanhamentos clássicos.</p>
+                        <a href="https://pedido.anota.ai/loja/papi-parrilla" target="_blank" class="text-orange-600 font-bold flex items-center gap-2 hover:text-orange-700 transition-colors text-sm uppercase tracking-wide">
+                            Pedir Agora <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-stone-100 group hover:shadow-xl transition-all duration-300 flex flex-col">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-stone-900/80 to-transparent opacity-80"></div>
+                        <h4 class="absolute bottom-4 left-4 text-xl font-bold text-white">Assado de Tira</h4>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <p class="text-stone-600 text-sm mb-6">Tradicional corte de costela, sabor intenso e maciez incomparável para os amantes de um bom churrasco.</p>
+                        <a href="https://pedido.anota.ai/loja/papi-parrilla" target="_blank" class="text-orange-600 font-bold flex items-center gap-2 hover:text-orange-700 transition-colors text-sm uppercase tracking-wide">
+                            Pedir Agora <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-stone-100 group hover:shadow-xl transition-all duration-300 flex flex-col">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1599921841143-81906ce7d70d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-stone-900/80 to-transparent opacity-80"></div>
+                        <h4 class="absolute bottom-4 left-4 text-xl font-bold text-white">Filé à Parmegiana</h4>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <p class="text-stone-600 text-sm mb-6">Um dos nossos filés mais pedidos! Acompanha arroz, batata frita e nossa famosa salada de maionese.</p>
+                        <a href="https://pedido.anota.ai/loja/papi-parrilla" target="_blank" class="text-orange-600 font-bold flex items-center gap-2 hover:text-orange-700 transition-colors text-sm uppercase tracking-wide">
+                            Pedir Agora <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-stone-100 group hover:shadow-xl transition-all duration-300 flex flex-col">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-stone-900/80 to-transparent opacity-80"></div>
+                        <h4 class="absolute bottom-4 left-4 text-xl font-bold text-white">Pizzas Artesanais</h4>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <p class="text-stone-600 text-sm mb-6">Massa no ponto certo e muito recheio! Trabalhamos com opções salgadas e doces para finalizar sua noite.</p>
+                        <a href="https://pedido.anota.ai/loja/papi-parrilla" target="_blank" class="text-orange-600 font-bold flex items-center gap-2 hover:text-orange-700 transition-colors text-sm uppercase tracking-wide">
+                            Pedir Agora <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION & HOURS SECTION -->
+    <section id="localizacao" class="py-24 bg-white border-t border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-stone-950 rounded-[2rem] overflow-hidden shadow-2xl flex flex-col lg:flex-row border border-stone-800">
+                
+                <!-- Info Side -->
+                <div class="w-full lg:w-1/2 p-10 md:p-16 flex flex-col justify-center text-white relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-orange-600/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
+                    
+                    <h2 class="text-3xl md:text-4xl font-bold mb-10 relative z-10">Venha nos Visitar</h2>
+                    
+                    <div class="space-y-8 relative z-10">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-orange-500/10 p-3 rounded-xl text-orange-500 mt-1">
+                                <i data-lucide="map-pin" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1 text-stone-100">Endereço</h4>
+                                <p class="text-stone-400 leading-relaxed">Rua 15 de Novembro, 1525 - Centro, Uruguaiana - RS</p>
+                                <a href="https://share.google/cyXHZnaipNjoONyRt" target="_blank" class="inline-block mt-2 text-orange-400 hover:text-orange-300 font-medium text-sm transition-colors">
+                                    Abrir no Google Maps →
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="bg-orange-500/10 p-3 rounded-xl text-orange-500 mt-1">
+                                <i data-lucide="clock" class="w-6 h-6"></i>
+                            </div>
+                            <div class="w-full">
+                                <h4 class="font-bold text-lg mb-3 text-stone-100">Horários</h4>
+                                <div class="space-y-3 text-stone-400 text-sm">
+                                    <div class="flex justify-between border-b border-stone-800 pb-2">
+                                        <span class="font-medium">Terça a Sábado</span>
+                                        <div class="text-right">
+                                            <span class="block">10:00 - 14:30</span>
+                                            <span class="block">19:00 - 00:00</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between border-b border-stone-800 pb-2">
+                                        <span class="font-medium">Segunda-feira</span>
+                                        <div class="text-right">
+                                            <span class="block">10:00 - 14:30</span>
+                                            <span class="block">19:00 - 00:00</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between pt-1 text-orange-400/80">
+                                        <span>Domingo</span>
+                                        <span>Consulte Horários</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="bg-orange-500/10 p-3 rounded-xl text-orange-500 mt-1">
+                                <i data-lucide="phone" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1 text-stone-100">Contatos</h4>
+                                <p class="text-stone-400">Telefone: (55) 3402-6960</p>
+                                <p class="text-stone-400">WhatsApp: (55) 99927-3278</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Map/Image Side -->
+                <div class="w-full lg:w-1/2 min-h-[400px] relative">
+                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" class="absolute inset-0 w-full h-full object-cover" />
+                    <div class="absolute inset-0 bg-stone-900/30"></div>
+                    
+                    <div class="absolute inset-0 flex items-center justify-center p-6">
+                        <a href="https://share.google/cyXHZnaipNjoONyRt" target="_blank" class="bg-white/95 backdrop-blur text-stone-900 px-8 py-4 rounded-xl shadow-2xl font-bold flex items-center gap-3 hover:bg-orange-500 hover:text-white transition-all transform hover:scale-105">
+                            <i data-lucide="map-pin" class="w-6 h-6"></i> Traçar Rota no Mapa
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-stone-950 pt-16 pb-8 border-t border-stone-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+                <div>
+                    <div class="flex items-center gap-2 mb-6">
+                        <i data-lucide="chef-hat" class="h-8 w-8 text-orange-500"></i>
+                        <span class="font-bold text-2xl uppercase tracking-wider text-white">Papi Parrilla</span>
+                    </div>
+                    <p class="text-stone-400 text-sm leading-relaxed mb-6">
+                        O autêntico sabor da Fronteira Oeste. Carnes selecionadas, pizzas artesanais e os melhores filés de Uruguaiana em um ambiente aconchegante.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://instagram.com/papi.parrilla" target="_blank" class="w-10 h-10 bg-stone-900 rounded-full flex items-center justify-center text-stone-400 hover:bg-orange-500 hover:text-white transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-6">Links Úteis</h4>
+                    <ul class="space-y-3 text-stone-400 text-sm">
+                        <li><a href="#sobre" class="hover:text-orange-500 transition-colors">Nossa Estrutura</a></li>
+                        <li><a href="#destaques" class="hover:text-orange-500 transition-colors">Cardápio & Delivery</a></li>
+                        <li><a href="#localizacao" class="hover:text-orange-500 transition-colors">Como Chegar</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-6">Contato</h4>
+                    <ul class="space-y-3 text-stone-400 text-sm">
+                        <li class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-orange-500"></i> Uruguaiana - RS, Centro</li>
+                        <li class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-orange-500"></i> (55) 3402-6960</li>
+                        <li class="flex items-center gap-2"><i data-lucide="message-circle" class="w-4 h-4 text-orange-500"></i> (55) 99927-3278</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-stone-900 text-center text-stone-500 text-sm">
+                <p>© 2026 Papi Parrilla Restaurante e Pizzaria. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING ACTION BUTTONS -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        <!-- Delivery -->
+        <a href="https://pedido.anota.ai/loja/papi-parrilla" target="_blank" class="bg-orange-600 text-white p-4 rounded-full shadow-2xl hover:bg-orange-700 hover:scale-110 transition-all duration-300 flex items-center justify-center group" aria-label="Pedir Delivery">
+            <i data-lucide="shopping-bag" class="w-6 h-6"></i>
+            <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs group-hover:ml-3 transition-all duration-500 ease-in-out font-medium text-sm">Pedir Online</span>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/55999273278?text=Olá! Vim pelo site e gostaria de tirar uma dúvida." target="_blank" class="bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:bg-[#20bd5a] hover:scale-110 transition-all duration-300 flex items-center justify-center group" aria-label="Falar no WhatsApp">
+            <i data-lucide="message-circle" class="w-6 h-6"></i>
+            <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs group-hover:ml-3 transition-all duration-500 ease-in-out font-medium text-sm">Falar no WhatsApp</span>
+        </a>
+    </div>
+
+    <!-- Scripts de Interatividade -->
+    <script>
+        // Inicializa os ícones do Lucide
+        lucide.createIcons();
+
+        // Lógica do Menu Mobile
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const links = document.querySelectorAll('.mobile-link');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
